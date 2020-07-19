@@ -20,9 +20,8 @@ const Game = () =>{
     const handleClick = (index) =>{
         const boardGame = [...board]
         if(winner){
-            socket.emit('gameEnded', {room: this.getRoomId(), message: 'Game Tied'})
+            return
         }
-
         if(boardGame[index]) return
 
         boardGame[index] = playerX ? 'X' : 'O'
@@ -37,10 +36,11 @@ const Game = () =>{
             <h1>Game Container</h1>
             <Board cells={board} handleClick={handleClick}/>
             <div>
-                <p>{winner ? 'Winner is Player ' + winner : 'Player ' + (playerX ? 'X' : 'O') + "'s Turn"}</p>
+                <p>{winner ? 'The winner is Player ' + winner : 'Player ' + (playerX ? 'X' : 'O') + "'s Turn"}</p>
             </div>
         </div>
     )
 }
+
 
 export default Game

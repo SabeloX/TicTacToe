@@ -1,0 +1,4 @@
+run: npm install
+
+To run this application go to the root of the project and run: 'sh start.sh' using bash
+Or run server by going to server and client directory and running: npm start.
